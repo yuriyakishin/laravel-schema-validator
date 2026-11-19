@@ -8,6 +8,8 @@
 
 A Livewire tool for Laravel that validates a page's Schema.org structured data and checks whether Google can build rich results from it. It reads JSON-LD (including `@graph` and `@id` references) and microdata. It shows the markup as a tree, checks types and value formats against the Schema.org vocabulary, and suggests the right name for a misspelled type.
 
+![Schema Validator report](images/schema-validator.png)
+
 **🔗 Live example: [yu.net.ua/en/tools/schema-validator](https://yu.net.ua/en/tools/schema-validator)**
 
 ## What it checks
