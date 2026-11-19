@@ -75,6 +75,14 @@ After every check the tool dispatches `Yu\WebToolsCore\Events\ToolCheckedEvent` 
 
 The tool reads the HTML the server returns. It doesn't see markup that JavaScript adds after the page loads.
 
+## Author
+
+Yuriy Akishin:
+- 🌐 Website: https://yu.net.ua
+- 📧 Email: yuriy.akishin@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/yuriyakishin/
+- 💻 GitHub: https://github.com/yuriyakishin
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
