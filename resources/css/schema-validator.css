@@ -1,0 +1,36 @@
+/*
+ * Schema validator: the rich results summary and the tree of items above the report.
+ * Uses the --wt-* variables of web-tools-core.css.
+ */
+
+.sv-rich { margin-top: 32px; padding: 26px 28px; border: 1px solid var(--wt-line); border-radius: 16px; background: var(--wt-surface); }
+.sv-rich h3 { margin: 0; font-size: 20px; font-weight: 600; }
+.sv-rich + .wt-report { margin-top: 20px; }
+.sv-none { margin: 8px 0 0; color: var(--wt-text-2); }
+
+.sv-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+.sv-badge { display: grid; gap: 2px; padding: 10px 14px; border: 1px solid var(--wt-line); border-left: 3px solid var(--wt-muted); border-radius: 10px; background: var(--wt-bg); }
+.sv-badge b { font-family: var(--wt-mono); font-size: 14px; font-weight: 600; color: var(--wt-text); }
+.sv-badge span { font-size: 13px; color: var(--wt-text-2); }
+.sv-badge.wt-pass { border-left-color: var(--wt-ok); }
+.sv-badge.wt-warn { border-left-color: var(--wt-warn); }
+.sv-badge.wt-fail { border-left-color: var(--wt-err); }
+
+.sv-tree { margin-top: 18px; }
+.sv-tree > summary { cursor: pointer; font-weight: 600; color: var(--wt-accent); }
+.sv-tree ul { margin: 0; padding: 0; list-style: none; }
+.sv-tree > ul { margin-top: 12px; display: grid; gap: 10px; }
+.sv-item { padding: 10px 12px; border: 1px solid var(--wt-line); border-radius: 8px; background: var(--wt-bg); min-width: 0; }
+.sv-item .sv-item { margin-top: 6px; background: var(--wt-surface); }
+.sv-type { font-family: var(--wt-mono); font-weight: 600; color: var(--wt-text); }
+.sv-source { margin-left: 8px; font-size: 12px; color: var(--wt-muted); }
+.sv-item dl { display: grid; gap: 4px; margin: 8px 0 0; }
+.sv-item dl > div { display: grid; grid-template-columns: minmax(90px, 160px) 1fr; gap: 10px; min-width: 0; }
+.sv-item dt { font-family: var(--wt-mono); font-size: 13px; color: var(--wt-muted); overflow-wrap: anywhere; }
+.sv-item dd { margin: 0; min-width: 0; font-size: 13px; }
+.sv-item code { display: block; font-family: var(--wt-mono); color: var(--wt-text-2); overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+    .sv-rich { padding: 20px; }
+    .sv-item dl > div { grid-template-columns: 1fr; gap: 0; }
+}
