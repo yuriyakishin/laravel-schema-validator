@@ -32,10 +32,10 @@ A rich result check is skipped, and doesn't lower the score, when its type isn't
 ## Installation
 
 ```bash
-composer require yu-laravel/schema-validator
+composer require yu-laravel/laravel-schema-validator
 ```
 
-This also installs [`yu-laravel/web-tools-core`](https://github.com/yuriyakishin/web-tools-core). Both service providers are discovered automatically.
+This also installs [`yu-laravel/laravel-web-tools-core`](https://github.com/yuriyakishin/laravel-web-tools-core). Both service providers are discovered automatically.
 
 ## Usage
 
@@ -48,11 +48,11 @@ Put the component on a page whose layout includes `@livewireStyles` and `@livewi
 Import the styles into your CSS build:
 
 ```css
-@import "../../vendor/yu-laravel/web-tools-core/resources/css/web-tools-core.css";
-@import "../../vendor/yu-laravel/schema-validator/resources/css/schema-validator.css";
+@import "../../vendor/yu-laravel/laravel-web-tools-core/resources/css/web-tools-core.css";
+@import "../../vendor/yu-laravel/laravel-schema-validator/resources/css/schema-validator.css";
 ```
 
-To match your site's colours and fonts, override the `--wt-*` variables (see [Web Tools Core](https://github.com/yuriyakishin/web-tools-core#styles)).
+To match your site's colours and fonts, override the `--wt-*` variables (see [Web Tools Core](https://github.com/yuriyakishin/laravel-web-tools-core#styles)).
 
 ## Configuration
 
@@ -61,13 +61,13 @@ To match your site's colours and fonts, override the `--wt-*` variables (see [We
 | `SCHEMA_VALIDATOR_ENABLED` | `true` | Turn the tool off without uninstalling it. |
 | `SCHEMA_VALIDATOR_PER_HOUR` | `10` | Checks per visitor IP per hour. |
 
-A report is cached for 2 minutes, so a fix shows up on the next check. `config/schema-validator.php` also limits the page size (5 MB). Page fetching (timeouts, redirects, user agent) is set in [Web Tools Core](https://github.com/yuriyakishin/web-tools-core#configuration).
+A report is cached for 2 minutes, so a fix shows up on the next check. `config/schema-validator.php` also limits the page size (5 MB). Page fetching (timeouts, redirects, user agent) is set in [Web Tools Core](https://github.com/yuriyakishin/laravel-web-tools-core#configuration).
 
 The Schema.org types and their parents are stored in `resources/vocabulary/types.php`. That file was generated from the official `schemaorg-current-https-types.csv`; regenerate it when Schema.org releases a new version.
 
 ## Events
 
-After every check the tool dispatches `Yu\WebToolsCore\Events\ToolCheckedEvent` with `tool = "schema-validator"` (see [Listening to checks](https://github.com/yuriyakishin/web-tools-core#listening-to-checks)).
+After every check the tool dispatches `Yu\WebToolsCore\Events\ToolCheckedEvent` with `tool = "schema-validator"` (see [Listening to checks](https://github.com/yuriyakishin/laravel-web-tools-core#listening-to-checks)).
 
 ## Languages
 
