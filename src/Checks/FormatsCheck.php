@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yu\SchemaValidator\Checks;
 
 use Yu\SchemaValidator\Data\Snapshot;

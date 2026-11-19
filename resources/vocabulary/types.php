@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * Schema.org types and their direct parent types, from https://schema.org/version/latest/schemaorg-current-https-types.csv
  * (downloaded 2026-11-14). Regenerate it when schema.org releases a new version.
