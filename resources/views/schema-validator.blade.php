@@ -33,7 +33,9 @@
     </div>
 
     @if ($report)
-        <div wire:loading.remove wire:target="analyze" aria-live="polite">
+        {{-- A new block for every check (keyed by the count), so each report scrolls the tool up to its form --}}
+        <div wire:key="wt-report-{{ $reportNumber }}" wire:loading.remove wire:target="analyze" aria-live="polite"
+             x-init="$root.scrollIntoView({ behavior: 'smooth', block: 'start' })">
             {{-- One badge per rich result the page has markup for: the R checks that were not skipped --}}
             @php($rich = array_values(array_filter(collect($report['groups'])->firstWhere('code', 'R')['checks'] ?? [], fn (array $check): bool => $check['status'] !== 'skip')))
             <section class="sv-rich" aria-labelledby="sv-rich-title">
