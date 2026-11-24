@@ -67,7 +67,8 @@ The Schema.org types and their parents are stored in `resources/vocabulary/types
 
 ## Events
 
-After every check the tool dispatches `Yu\WebToolsCore\Events\ToolCheckedEvent` with `tool = "schema-validator"` (see [Listening to checks](https://github.com/yuriyakishin/laravel-web-tools-core#listening-to-checks)).
+- `Yu\SchemaValidator\Events\SchemaValidatorEvent` fires after every finished check: successful, failed or from the cache. It carries `url`, `locale`, `report` (null on failure), `error` and `fromCache`. Listen to it to follow this tool only.
+- `Yu\WebToolsCore\Events\ToolCheckedEvent` fires next to it with `tool = "schema-validator"` and the same data, shared by all the web tools (see [Listening to checks](https://github.com/yuriyakishin/laravel-web-tools-core#listening-to-checks)).
 
 ## Languages
 

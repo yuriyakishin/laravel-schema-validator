@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Yu\SchemaValidator\Livewire;
 
 use Illuminate\Contracts\View\View;
+use Yu\SchemaValidator\Events\SchemaValidatorEvent;
 use Yu\SchemaValidator\Services\SchemaAnalyzer;
 use Yu\WebToolsCore\Livewire\ToolComponent;
 use Yu\WebToolsCore\Locale\LocaleResolver;
@@ -17,6 +18,11 @@ class SchemaValidatorComponent extends ToolComponent
     protected function name(): string
     {
         return 'schema-validator';
+    }
+
+    protected function event(): string
+    {
+        return SchemaValidatorEvent::class;
     }
 
     protected function locales(): LocaleResolver
